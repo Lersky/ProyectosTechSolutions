@@ -43,9 +43,7 @@
                     <td>
                         <a href="{{ url('/getbyid/' . $proyecto['id']) }}">Ver</a>
                         <a href="{{ url('/update/' . $proyecto['id']) }}">Editar</a>
-                        <form action="{{ url('/delete/' . $proyecto['id']) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
+                        <form action="{{ url('/delete/' . $proyecto['id']) }}" style="display:inline;">
                             <button type="submit">Eliminar</button>
                         </form>
                     </td>

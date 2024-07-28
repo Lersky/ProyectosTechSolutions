@@ -16,9 +16,9 @@ class ProyectoModel extends Model
     private $monto;
 
     public static $proyectos = [
-        ['id' => 1, 'nombre' => 'Primer Proyecto', 'fechainicio' => '2010-10-05', 'estado' => 'activo', 'responsable' => 'Sebastian Carreras', 'monto' => 100000],
-        ['id' => 2, 'nombre' => 'Segundo Proyecto', 'fechainicio' => '2024-12-10', 'estado' => 'inactivo', 'responsable' => 'Alberto Barbano', 'monto' => 550000],
-        ['id' => 2, 'nombre' => 'Tercer Proyecto', 'fechainicio' => '2005-01-02', 'estado' => 'activo', 'responsable' => 'Nicolas Neira', 'monto' => 750000],
+        ['id' => 1, 'nombre' => 'Primer Proyecto', 'fecha_inicio' => '2010-10-05', 'estado' => 'activo', 'responsable' => 'Sebastian Carreras', 'monto' => 100000],
+        ['id' => 2, 'nombre' => 'Segundo Proyecto', 'fecha_inicio' => '2024-12-10', 'estado' => 'inactivo', 'responsable' => 'Alberto Barbano', 'monto' => 550000],
+        ['id' => 3, 'nombre' => 'Tercer Proyecto', 'fecha_inicio' => '2005-01-02', 'estado' => 'activo', 'responsable' => 'Nicolas Neira', 'monto' => 750000],
     ];
 
     public function __construct($data = []){
@@ -30,6 +30,11 @@ class ProyectoModel extends Model
         $this->monto = $data['monto'] ?? null;
     }
     
+    public static function findById($id)
+    {
+        return collect(self::$proyectos)->firstWhere('id', $id);
+    }
+
     //Setters
     public function setId($_n){
         $this->id = $_n;

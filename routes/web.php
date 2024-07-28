@@ -7,7 +7,7 @@ use App\Http\Controllers\GetController;
 use App\Http\Controllers\UpdateController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [GetController::class]);
+Route::get('/', GetController::class);
 
 Route::get('/get', GetController::class);
 

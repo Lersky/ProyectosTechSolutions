@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProyectoModel;
 use Illuminate\Http\Request;
 
 class CreateController extends Controller
